@@ -46,5 +46,5 @@ jobs:
         run: terraform plan
 
       - name: Terraform Apply
-        if: github.ref_name == 'dev' || github.ref_name == 'qa' || github.ref_name == 'prod'
+        if: github.ref_name == inputs.environment
         run: terraform apply --auto-approve
